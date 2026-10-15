@@ -47,9 +47,10 @@ Clone the three repositories side by side, with the same parent directory:
 
 1. Open an issue with the Schema Change Proposal template. Say what changes and what it does to
    the tools.
-2. Edit `schema/*.json` on a branch. Keep the `$id` of each file as
-   `https://calm.finos.org/release/<version>/meta/<file>`, where `<version>` is the next release.
-   `publish-site.yml` refuses a release whose `$id` does not match its URL.
+2. Edit `schema/*.json` on a branch. The `$id` of each file is
+   `https://calm.finos.org/release/<version>/meta/<file>`. On `main` it names the last release until
+   the pull request that prepares the next release changes it. `publish-site.yml` refuses a tag whose
+   `$id` does not match its URL.
 3. Run `npm ci` and `npm test` with the Node version in `.nvmrc`. A new kind of check needs a test
    in `tests/`.
 4. Open a pull request. Every change needs approval from a member of
